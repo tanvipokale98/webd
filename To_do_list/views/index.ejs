@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <section class="main">
+        <div class="title">To Do List</div> 
+        <div class="date"><%= date %></div>
+        <div class="box">
+                  <form action="/show" method="post">
+                    <select name="filter" onclick="this.form.submit()">
+                        <option value="all">all</option>
+                        <option value="active">active</option>
+                        <option value="completed">completed</option>
+                    </select>
+                  </form>    
+                <% if(task.length <=0){ %>
+                    <p>No task added.</p>
+                    <% } else { %>
+                       
+                            <% for(let i=0;i< task.length ; i++){ %>
+                                <div class="container">
+                                <form action="/check" method="post" id="check<%= task[i].id %>" class="form">
+                                    <input type="checkbox" value="<%= task[i].id %>"
+                                        onchange="document.getElementById('check<%= task[i].id %>').submit()"
+                                        name="taskid">
+                                    <p id="p<%= task[i].id %>">
+                                        <%= task[i].details %>
+                                    </p>
+
+                                </form>
+                               
+                                <form action="/update" method="post" id="update<%= task[i].id %>" class="form">
+                                    <input type="hidden" value="<%= task[i].details %>" name="taskinput"
+                                        id="i<%= task[i].id %>">
+                                    <button type="button" name="submit" value="<%= task[i].id %>"
+                                        onclick="handler('<%= task[i].id %>')" id="btn<%= task[i].id %>"
+                                        data-editing="false" class="btn"><img src="/img/pencil2.svg" height="25px" width="25px"
+                                            id="img<%= task[i].id %>"></button>
+
+                                    <button type="submit" name="submit2" value="<%= task[i].id %>"
+                                        id="subtn<%= task[i].id %>" style="display: none;"></button>
+                                </form>
+
+                                <form action="/delete" method="post" class="form">
+                                    <button type="submit" name="submit" value="<%= task[i].id %>" class="btn"><img src="/img/cross.png" height="25px" width="25px"></button>
+                                </form>
+                              
+                                        </div>
+                                <% } %>
+                      
+                        <% } %>
+
+           
+            <form action="/add" method="post" class="task-form">
+                <div class="addtext">
+                    <input type="text" name="task" id="task" placeholder="Add task">
+                </div>
+                <div class="submitbtn">
+                    <button type="submit" name="submit" id="submit">+</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        function handler(a) {
+            const para = document.getElementById("p" + a);
+            const inp = document.getElementById("i" + a);
+            const img = document.getElementById("img" + a);
+            const btn = document.getElementById("btn" + a);
+            const subtn = document.getElementById("subtn" + a);
+            const isedit = btn.getAttribute("data-editing") == "true";
+            if (!isedit) {
+                para.style.display = "none";
+                inp.type = 'text';
+                inp.focus();
+                img.src = "/img/tick.svg";
+                btn.setAttribute("data-editing", "true");
+            }
+            else {
+                subtn.click();
+            }
+        }
+    </script>
+</body>
+
+</html>
