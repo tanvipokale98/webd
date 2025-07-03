@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="\public\css\index.css">
+</head>
+<body>
+    <section class="main">
+      <div class="box">
+       <div class="search-img"><input class="search" name="search" id="search" placeholder="Search Location..."><button type="button" onclick="submit()" class="btn"><img src="\public\img\search.svg" height="20px" width="20px"></button></div> 
+        <div class="container">
+            <div class="cont">
+                <p class="ele" id="Temp">23`C</p>
+                <p class="ele" id="date">23 June</p>
+                <div class="ele" id="locat"><svg   height="40px"  data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><ellipse cx="64" cy="94.379" rx="54.5" ry="13.333" style="fill:#feded6"/><ellipse cx="64" cy="94.379" rx="33.613" ry="7.176" style="fill:#f6c6bb"/><path d="M64 20.288a29.333 29.333 0 0 0-29.333 29.333C34.667 71.288 64 95.871 64 95.871s29.333-23.917 29.333-46.25A29.333 29.333 0 0 0 64 20.288zm0 42.289a12.956 12.956 0 1 1 12.956-12.956A12.956 12.956 0 0 1 64 62.577z" style="fill:#ec4d85"/><path d="M59.75 20.6a29.337 29.337 0 0 0-25.083 29.021c0 16.51 17.023 34.7 25.13 42.432 8.144-7.624 25.037-25.479 25.037-42.432A29.337 29.337 0 0 0 59.75 20.6zM64 62.577h-8.5a12.956 12.956 0 1 1 0-25.912H64a12.956 12.956 0 1 1 0 25.912z" style="fill:#fd748c"/></svg><p id="loca">Pune</p></div>
+            </div>
+            <div class="cont weather-img"><img src="" id="currimg">
+            <p class="ele" id="weather">cloudy</p></div>
+            <div class="cont">
+                <p class="feat" id="Humidity">Humidity:</p>
+                <p class="feat" id="Visibility">Visibility:</p>
+                <p class="feat" id="uv_index">UV Index:</p>
+                <p class="feat" id="pressure">Pressure:</p>
+            </div>
+
+        </div>
+        <div class="container forecast">
+            <div class="fore 1">
+               <img src="" id="1img">
+                <div class="text" id="1date">22-june</div>
+                <div class="text" id="1temp">23`C</div>
+                <div class="text" id="1weather">rainy</div>
+            </div>
+            <div class="fore 2">
+                <img src="" id="2img">
+               <div class="text" id="2date">22-june</div>
+                <div class="text" id="2temp">23`C</div>
+                <div class="text" id="2weather">rainy</div>
+            </div>
+            <div class="fore 3">
+                <img src="" id="3img">
+              <div class="text" id="3date">22-june</div>
+                <div class="text" id="3temp">23`C</div>
+                <div class="text" id="3weather">rainy</div>
+            </div>
+            <div class="fore 4">
+                <img src="" id="4img">
+               <div class="text" id="4date">22-june</div>
+                <div class="text" id="4temp">23`C</div>
+                <div class="text" id="4weather">rainy</div>
+            </div>
+            <div class="fore 5">
+                <img src="" id="5img">
+                <div class="text" id="5date">22-june</div>
+                <div class="text" id="5temp">23`C</div>
+                <div class="text" id="5weather">rainy</div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <div id="loading" class="loading hidden"></div>
+    <script src="../index.js" ></script>
+
+</body>
+</html>

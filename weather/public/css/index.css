@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+}
+.main{
+    /* background-image: url("/public/img/rainy3.jpg"); */
+    background-image:  linear-gradient( 109.6deg,  rgba(15,2,2,1) 11.2%, rgba(36,163,190,1) 91.1%);
+    /* height: 86vh; */
+    padding: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.box{
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.199);
+    border-radius: 30px;
+    box-shadow:rgb(51, 51, 51)  0 0 80px;
+}
+.search-img{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+     border-radius: 100px;
+     padding: 0;
+     margin: 0;
+     gap: 2%;
+}
+.search {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-bottom: 2px solid #ffffffb3;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+
+.btn {
+    height: 44px;
+    width: 50px;
+    background: #00bcd4;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #0097a7;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* width: 100%;  */
+    margin-top: 40px;
+}
+.cont{
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.ele, .feat{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+#Temp{
+    font-size: 4rem;
+}
+#locat{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.weather-img img{
+     width:70%;
+     
+}
+.feat{
+    font-size: 20px;
+}
+.forecast{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    gap:15px;
+}
+.fore{
+    background-color: rgba(255, 255, 255, 0.264);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 30px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 40%;
+}
+#weather{
+    font-size: 20px;
+}
+.search::placeholder {
+    color: #cccccc;
+}
+
+.search:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid #00bcd4;
+    box-shadow: 0 4px 6px rgba(0, 188, 212, 0.3);
+}
+
+.loading {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #00bcd4;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@media (max-width:1025px) {
+   .box {
+    width: 90%;
+    padding: 40px;
+  }
+     #Temp{
+        font-size: 2rem;
+     }
+     .feat, #weather{
+        font-size: 13px;
+     }
+
+     .forecast{
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+     }
+     .fore{
+        width: 30%;
+     }
+}
+
+@media (max-width:426px) {
+   .box {
+    width: 90%;
+    padding: 40px;
+  }
+     #Temp{
+        font-size: 2rem;
+     }
+     .feat, #weather{
+        font-size: 13px;
+     }
+     .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+     }
+
+     .forecast{
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+     }
+     .fore{
+        width: 80%;
+     }
+}
+
